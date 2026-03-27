@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kyzenn | 84% Sales Growth in 60 Days for a Cosmetics Brand</title>
+<meta name="description" content="How Kyzenn grew a cosmetics brand from $15K to $28K/month in 60 days by building a Brand Store and fixing variation structure." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#1E2235;--amber:#C9956A;--sage:#6B7F6E;--parch:#F2EDE4;--beige:#B8A99B;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",sans-serif;}
+html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--parch);color:var(--navy);overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-thumb{background:var(--amber);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(242,237,228,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(184,169,155,0.2);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(30,34,53,.07);}
+.logo{font-family:var(--serif);font-size:1.55rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);text-decoration:none;}.logo span{color:var(--amber);}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none;}
+.nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);opacity:.6;text-decoration:none;transition:opacity .2s;}
+.nav-links a:hover{opacity:1;}.nav-links a.active{opacity:1;color:var(--amber);}
+.nav-cta-btn{background:var(--navy);color:var(--parch) !important;padding:.52rem 1.25rem;border-radius:2px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s;white-space:nowrap;}
+.nav-cta-btn:hover{background:var(--amber);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}.hamburger span{width:22px;height:1.5px;background:var(--navy);display:block;}
+.btn{font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.8rem;border-radius:2px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:all .2s;}
+.btn-fill{background:var(--amber);color:var(--navy);}.btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,106,.3);}
+.btn-dark{background:var(--navy);color:var(--parch);}.btn-dark:hover{background:var(--amber);color:var(--navy);}
+.btn-outline{background:transparent;color:var(--navy);border:1px solid rgba(30,34,53,.2);}.btn-outline:hover{border-color:var(--amber);color:var(--amber);}
+.r{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}.r.on{opacity:1;transform:none;}
+.r2{transition-delay:.08s;}.r3{transition-delay:.16s;}.r4{transition-delay:.24s;}
+.pw{max-width:1080px;margin:0 auto;padding:0 6%;}
+.breadcrumb{padding-top:92px;padding-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;}
+.breadcrumb a{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);text-decoration:none;opacity:.8;}
+.breadcrumb a:hover{opacity:1;}.breadcrumb-sep{font-size:.65rem;color:var(--beige);}
+.breadcrumb span{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);opacity:.38;}
+.case-header{padding-bottom:1.8rem;border-bottom:1px solid rgba(184,169,155,.3);}
+.case-header-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+.case-industry{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);}
+.case-topics{display:flex;gap:.4rem;flex-wrap:wrap;}
+.case-topic{font-size:.58rem;letter-spacing:.07em;color:var(--sage);background:rgba(107,127,110,.12);padding:.2rem .6rem;border-radius:20px;}
+.case-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;color:var(--navy);line-height:1.1;}
+.case-title em{font-style:italic;color:var(--amber);}
+.hero-img{width:100%;aspect-ratio:16/6;overflow:hidden;}
+.hero-bg{width:100%;height:100%;position:relative;}
+.hero-bg svg{position:absolute;inset:0;width:100%;height:100%;}
+.kpi-strip{background:var(--navy);padding:3.5rem 6%;}
+.kpi-strip-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:5rem;align-items:center;}
+.kpi-main-num{font-family:var(--serif);font-size:clamp(4.5rem,9vw,7.5rem);font-weight:300;color:var(--amber);line-height:1;letter-spacing:-.01em;}
+.kpi-main-label{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--parch);opacity:.65;margin-top:.5rem;}
+.kpi-secondary{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;border-left:1px solid rgba(184,169,155,.12);padding-left:5rem;}
+.kpi-sec-num{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--amber);line-height:1;margin-bottom:.3rem;}
+.kpi-sec-label{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--parch);opacity:.5;}
+.case-body{padding:3rem 6%;}
+.case-body-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 256px;gap:4rem;align-items:start;}
+.intro-p{font-size:.96rem;font-weight:300;color:var(--navy);line-height:1.85;margin-bottom:.9rem;}
+.body-p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.85;margin-bottom:.9rem;}
+.cs-sec{margin-top:2.5rem;padding-top:2.5rem;}
+.cs-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;}
+.cs-label::after{content:"";flex:1;height:1px;background:rgba(201,149,106,.2);}
+.ch-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid rgba(184,169,155,.3);}
+.ch-item{background:#fff;padding:1.3rem 1.5rem;display:flex;align-items:flex-start;gap:.9rem;transition:background .25s;}
+.ch-item:hover{background:rgba(201,149,106,.04);}
+.ch-n{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--amber);opacity:.18;line-height:1;flex-shrink:0;width:26px;}
+.ch-text{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--navy);line-height:1.3;padding-top:.1rem;}
+.sol-item{margin-bottom:1.8rem;}.sol-item:last-child{margin-bottom:0;}
+.sol-item h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--navy);margin-bottom:.5rem;display:flex;align-items:center;gap:.7rem;}
+.sol-item h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.sol-item p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.82;}
+.res-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:1.5rem;}
+.rn{padding:2rem 1.8rem;background:var(--navy);}
+.rn:nth-child(2){background:rgba(201,149,106,.08);}
+.rn:nth-child(2) .rn-num{color:var(--navy);}.rn:nth-child(2) .rn-label{color:var(--navy);opacity:.55;}
+.rn-num{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--amber);line-height:1;margin-bottom:.4rem;}
+.rn-label{font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--parch);opacity:.6;}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1.5rem;}
+.ba-before{background:rgba(30,34,53,.03);border:1px solid rgba(184,169,155,.3);padding:1.5rem;}
+.ba-after{background:var(--navy);padding:1.5rem;}
+.ba-head{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.9rem;}
+.ba-before .ba-head{color:var(--beige);}.ba-after .ba-head{color:var(--amber);opacity:.75;}
+.ba-rows{display:flex;flex-direction:column;gap:.5rem;}
+.ba-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.82rem;font-weight:300;line-height:1.5;}
+.ba-before .ba-row{color:#5e5e70;}.ba-after .ba-row{color:var(--beige);}
+.ba-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:.45rem;}
+.ba-before .ba-dot{background:rgba(184,169,155,.4);}.ba-after .ba-dot{background:var(--amber);}
+.takeaway{background:var(--navy);padding:1.8rem 2rem;margin-top:1.8rem;}
+.tk-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.55rem;}
+.takeaway p{font-size:.86rem;font-weight:300;color:var(--beige);line-height:1.8;}
+.sidebar{position:sticky;top:88px;}
+.sb-box{border:1px solid rgba(184,169,155,.3);background:#fff;overflow:hidden;margin-bottom:1.2rem;}
+.sb-top{background:var(--navy);padding:1.5rem 1.5rem 1.3rem;}
+.sb-kpi{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--amber);line-height:1;margin-bottom:.25rem;}
+.sb-kpi-label{font-size:.58rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--parch);opacity:.55;}
+.sb-body{padding:1.3rem 1.5rem;}
+.sb-row{margin-bottom:.85rem;}.sb-row:last-child{margin-bottom:0;}
+.sb-key{font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);margin-bottom:.18rem;}
+.sb-val{font-size:.81rem;font-weight:300;color:var(--navy);}
+.sb-div{height:1px;background:rgba(184,169,155,.2);margin:.9rem 0;}
+.topic-list{display:flex;flex-direction:column;gap:.35rem;}
+.topic-item{font-size:.75rem;font-weight:300;color:#5e5e70;display:flex;align-items:center;gap:.55rem;}
+.topic-item::before{content:"\2014";color:var(--amber);font-size:.68rem;}
+.sb-cta{background:var(--navy);padding:1.5rem;}
+.sb-cta p{font-size:.8rem;font-weight:300;color:var(--beige);line-height:1.65;margin-bottom:1rem;}
+.sb-cta .btn{width:100%;display:block;text-align:center;font-size:.7rem;padding:.72rem;}
+.related{background:var(--navy);padding:60px 6%;}
+.related-inner{max-width:1080px;margin:0 auto;}
+.rel-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;}
+.rel-header h2{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--parch);}
+.rel-all{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-decoration:none;opacity:.8;}
+.rel-all:hover{opacity:1;}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.05);}
+.rel-card{background:rgba(255,255,255,.025);cursor:pointer;transition:background .3s;}
+.rel-card:hover{background:rgba(201,149,106,.06);}
+.rel-img{aspect-ratio:16/7;overflow:hidden;}
+.rel-body{padding:1.3rem 1.3rem 1.5rem;border-top:1px solid rgba(184,169,155,.08);}
+.rel-lever{font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);opacity:.5;margin-bottom:.55rem;}
+.rel-kpi{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--amber);line-height:1;margin-bottom:.3rem;}
+.rel-title{font-family:var(--serif);font-size:.9rem;font-weight:400;color:var(--parch);line-height:1.35;}
+.cta-sec{background:var(--parch);padding:70px 6%;text-align:center;}
+.cta-inner{max-width:520px;margin:0 auto;}
+.cta-tag{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.9rem;}
+.cta-tag::before,.cta-tag::after{content:"";width:22px;height:1px;background:var(--amber);opacity:.45;}
+.cta-h{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;color:var(--navy);line-height:1.15;margin-bottom:.8rem;}
+.cta-h em{font-style:italic;color:var(--amber);}
+.cta-p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.7;margin-bottom:1.8rem;}
+.cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;}
+footer{background:var(--navy);padding:2rem 6%;border-top:1px solid rgba(184,169,155,.12);}
+.foot-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;}
+.foot-logo{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--parch);text-decoration:none;display:block;margin-bottom:.2rem;}
+.foot-logo span{color:var(--amber);}
+.foot-tagline{font-size:.7rem;font-weight:300;font-style:italic;color:var(--beige);opacity:.45;}
+.foot-right{display:flex;align-items:center;gap:1.8rem;}
+.foot-links{display:flex;gap:1.4rem;list-style:none;}
+.foot-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--beige);opacity:.5;text-decoration:none;transition:opacity .2s;}
+.foot-links a:hover{opacity:1;}
+.li-icon{width:34px;height:34px;border:1px solid rgba(184,169,155,.2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--beige);text-decoration:none;transition:border-color .2s,color .2s;}
+.li-icon:hover{border-color:var(--amber);color:var(--amber);}
+.foot-bar{max-width:1080px;margin:1.3rem auto 0;padding-top:1.3rem;border-top:1px solid rgba(184,169,155,.07);text-align:center;font-size:.68rem;font-weight:300;color:var(--beige);opacity:.35;}
+.sticky{position:fixed;bottom:1.8rem;right:1.8rem;z-index:90;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none;}
+.sticky.show{opacity:1;transform:none;pointer-events:all;}
+@media(max-width:960px){.kpi-strip-inner{grid-template-columns:1fr;gap:2rem;}.kpi-secondary{border-left:none;padding-left:0;border-top:1px solid rgba(184,169,155,.12);padding-top:2rem;grid-template-columns:repeat(3,1fr);}.case-body-inner{grid-template-columns:1fr;gap:2.5rem;}.sidebar{position:static;}.ch-list{grid-template-columns:1fr;}.res-nums{grid-template-columns:1fr;}.ba{grid-template-columns:1fr;}.rel-grid{grid-template-columns:1fr;}.rel-header{flex-direction:column;gap:.8rem;}.nav-links{display:none;}.nav-cta-btn{display:none;}.hamburger{display:flex;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--parch);padding:1.8rem 6%;gap:1.4rem;border-bottom:1px solid rgba(184,169,155,.2);}.foot-inner{flex-direction:column;align-items:flex-start;}}
+@media(max-width:600px){.kpi-secondary{grid-template-columns:1fr;}.case-body{padding:2.5rem 5%;}.cta-sec,.related{padding:50px 5%;}.pw{padding:0 5%;}}</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="logo">Kyzenn</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="results.html" class="active">Results</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="pw">
+  <div class="breadcrumb r"><a href="results.html">Case Studies</a><span class="breadcrumb-sep">/</span><span>84% Sales Growth in 60 Days</span></div>
+  <div class="case-header r r2">
+    <div class="case-header-meta">
+      <span class="case-industry">Cosmetics &amp; Beauty</span>
+      <div class="case-topics">
+        <span class="case-topic">Brand Store Build</span><span class="case-topic">Catalog Restructure</span>
+        <span class="case-topic">Variation Strategy</span><span class="case-topic">AOV Improvement</span><span class="case-topic">Brand Presence</span>
+      </div>
+    </div>
+    <h1 class="case-title">84% Sales Growth in 60 Days &mdash;<br><em>Built on Structure, Not Spend</em></h1>
+  </div>
+</div>
+<div class="hero-img r r3">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#2a1a2e 0%,#3d2040 45%,#5a2a58 70%,#c9956a0d 100%);">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fcos" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a1a2e" stop-opacity="0"/><stop offset="100%" stop-color="#180e1c" stop-opacity="0.75"/></linearGradient>
+        <radialGradient id="gcos" cx="70%" cy="30%" r="50%"><stop offset="0%" stop-color="#C9956A" stop-opacity="0.1"/><stop offset="100%" stop-color="#C9956A" stop-opacity="0"/></radialGradient>
+      </defs>
+      <ellipse cx="840" cy="120" rx="480" ry="200" fill="url(#gcos)"/>
+      <!-- Geometric brand-store grid motif -->
+      <rect x="200" y="60" width="160" height="200" rx="4" fill="none" stroke="rgba(201,149,106,0.07)" stroke-width="1"/>
+      <rect x="220" y="80" width="120" height="80" rx="2" fill="rgba(201,149,106,0.04)"/>
+      <rect x="220" y="170" width="55" height="70" rx="2" fill="rgba(201,149,106,0.03)"/>
+      <rect x="285" y="170" width="55" height="70" rx="2" fill="rgba(107,127,110,0.04)"/>
+      <rect x="440" y="80" width="120" height="180" rx="4" fill="none" stroke="rgba(107,127,110,0.07)" stroke-width="1"/>
+      <rect x="460" y="100" width="80" height="80" rx="2" fill="rgba(107,127,110,0.04)"/>
+      <rect x="700" y="50" width="200" height="240" rx="4" fill="none" stroke="rgba(201,149,106,0.08)" stroke-width="1"/>
+      <rect x="720" y="70" width="160" height="100" rx="2" fill="rgba(201,149,106,0.05)"/>
+      <rect x="720" y="180" width="70" height="90" rx="2" fill="rgba(201,149,106,0.03)"/>
+      <rect x="800" y="180" width="80" height="90" rx="2" fill="rgba(107,127,110,0.04)"/>
+      <rect x="980" y="90" width="100" height="150" rx="4" fill="none" stroke="rgba(201,149,106,0.06)" stroke-width="1"/>
+      <rect x="0" y="270" width="1200" height="90" fill="url(#fcos)"/>
+      <line x1="0" y1="1" x2="1200" y2="1" stroke="#C9956A" stroke-width="2" opacity="0.28"/>
+    </svg>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(42,26,46,.55) 0%,transparent 55%);"></div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="case-body">
+  <div class="case-body-inner">
+    <div class="case-content">
+            <div class="cs-sec r" style="border-top:none;padding-top:0;margin-bottom:0;">
+        <div class="cs-label">Background</div>
+        <p class="intro-p r">A cosmetics brand had solid products and reasonable organic traffic &mdash; but no Brand Store and a catalog that was working against itself. Variations that should have been grouped were listed as separate, unconnected ASINs. Shoppers landed on one product and had no pathway to others. AOV was suppressed. Cross-sell was non-existent. The brand had no unified presence on Amazon.</p>
+            <p class="body-p r r2">We built the Brand Store from scratch and restructured the full catalog variation architecture. Within 60 days, monthly revenue grew from $15K to $28K &mdash; an 84% increase &mdash; driven entirely by structural improvements, not additional ad spend. Store visitors grew 35%. AOV lifted 34% as customers discovered and bought across the range rather than in isolation.</p>
+</div>
+      <div class="cs-sec r">
+        <div class="cs-label">Challenges</div>
+        <div class="ch-list">
+          <div class="ch-item"><div class="ch-n">1</div><div class="ch-text">No Brand Store &mdash; no unified presence</div></div>
+          <div class="ch-item"><div class="ch-n">2</div><div class="ch-text">Variations listed as separate disconnected ASINs</div></div>
+          <div class="ch-item"><div class="ch-n">3</div><div class="ch-text">No cross-sell or browsing pathway for shoppers</div></div>
+          <div class="ch-item"><div class="ch-n">4</div><div class="ch-text">AOV suppressed by fragmented catalog structure</div></div>
+        </div>
+      </div>
+      <div class="cs-sec r r2">
+        <div class="cs-label">Solutions</div>
+        <p class="body-p" style="margin-bottom:1.5rem;">Two structural changes. One built the brand&rsquo;s presence on Amazon. The other fixed how the catalog presented that brand to shoppers.</p>
+        <div class="sol-item">
+          <h3>Brand Store Built from Scratch</h3>
+          <p>The brand had no Amazon Brand Store &mdash; no curated space for shoppers to discover the full range. We designed and built a Brand Store from zero: organised by product category, optimised for discovery and browse behaviour, and built to convert visitors arriving from both organic and paid sources. The Store gave the brand a home on Amazon and a destination to drive traffic toward.</p>
+        </div>
+        <div class="sol-item">
+          <h3>Catalog Variation Restructure</h3>
+          <p>Variations that belonged together were listed separately &mdash; each as a standalone ASIN with its own listing, its own reviews split across multiple pages, and no connection to the wider range. We consolidated all fragmented variations into properly structured parent-child relationships. Shoppers could now see the full product range on a single listing, compare options, and move between them without leaving the page. Review consolidation alone improved conversion signals across the board.</p>
+        </div>
+        <div class="sol-item">
+          <h3>AOV Lift Through Structural Discovery</h3>
+          <p>With variations properly linked and the Brand Store giving shoppers a logical browse journey, average order value rose organically. Customers who previously bought a single product in isolation now encountered the full range at the point of purchase &mdash; and bought more of it. The 34% AOV increase required no promotions or price changes. It required the catalog to stop hiding itself.</p>
+        </div>
+      </div>
+      <div class="cs-sec r">
+        <div class="cs-label">Results</div>
+        <div class="res-nums">
+          <div class="rn"><div class="rn-num">+84% Sales</div><div class="rn-label">Amazon YOY &middot; 60 Days</div></div>
+          <div class="rn"><div class="rn-num">+34% AOV</div><div class="rn-label">Average Order Value Lifted</div></div>
+        </div>
+        <p class="body-p">Monthly Amazon revenue grew from $15K to $28K in 60 days. Brand Store visitors increased 35%. Average order value lifted 34% as shoppers discovered the full product range through properly structured variations and a Brand Store that gave them a place to browse. No additional ad spend was required. The growth came entirely from fixing what was already there.</p>
+        <div class="ba">
+          <div class="ba-before">
+            <div class="ba-head">Before</div>
+            <div class="ba-rows">
+              <div class="ba-row"><span class="ba-dot"></span>No Brand Store</div>
+              <div class="ba-row"><span class="ba-dot"></span>Variations as separate, unlinked ASINs</div>
+              <div class="ba-row"><span class="ba-dot"></span>Reviews fragmented across listings</div>
+              <div class="ba-row"><span class="ba-dot"></span>No cross-sell or browse pathway</div>
+              <div class="ba-row"><span class="ba-dot"></span>$15K/month revenue</div>
+            </div>
+          </div>
+          <div class="ba-after">
+            <div class="ba-head">After</div>
+            <div class="ba-rows">
+              <div class="ba-row"><span class="ba-dot"></span>Brand Store built &mdash; full range visible</div>
+              <div class="ba-row"><span class="ba-dot"></span>Variations consolidated into parent-child</div>
+              <div class="ba-row"><span class="ba-dot"></span>+35% Brand Store visitors</div>
+              <div class="ba-row"><span class="ba-dot"></span>+34% average order value</div>
+              <div class="ba-row"><span class="ba-dot"></span>$28K/month revenue (+84%)</div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">
+          <div class="tk-label">Key Takeaway</div>
+          <p>A fragmented catalog actively suppresses revenue. When variations are disconnected, shoppers can&rsquo;t discover the full range &mdash; and AOV suffers. A Brand Store and proper variation architecture aren&rsquo;t cosmetic improvements. They are structural revenue drivers. For this brand, the fix required no additional spend. It required fixing the foundation the spend was already landing on.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="sb-box r r2">
+        <div class="sb-top"><div class="sb-kpi">+84%</div><div class="sb-kpi-label">YOY Sales Growth &middot; 60 Days</div></div>
+        <div class="sb-body">
+          <div class="sb-row"><div class="sb-key">Category</div><div class="sb-val">Cosmetics &amp; Beauty</div></div>
+          <div class="sb-row"><div class="sb-key">Revenue Before</div><div class="sb-val">$15K/month</div></div>
+          <div class="sb-row"><div class="sb-key">Revenue After</div><div class="sb-val">$28K/month (+84%)</div></div>
+          <div class="sb-row"><div class="sb-key">Store Visitors</div><div class="sb-val">+35%</div></div>
+          <div class="sb-row"><div class="sb-key">AOV Lift</div><div class="sb-val">+34%</div></div>
+          <div class="sb-row"><div class="sb-key">Timeline</div><div class="sb-val">60 days</div></div>
+          <div class="sb-div"></div>
+          <div class="sb-row"><div class="sb-key">Topics</div><div class="topic-list">
+            <span class="topic-item">Brand Store Build</span><span class="topic-item">Catalog Restructure</span>
+            <span class="topic-item">Variation Strategy</span><span class="topic-item">AOV Improvement</span><span class="topic-item">Brand Presence</span>
+          </div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<div class="cta-sec"><div class="cta-inner r"><div class="cta-tag">Work With Us</div><h2 class="cta-h">Is your catalog<br><em>hiding your revenue?</em></h2><p class="cta-p">We build Brand Stores and fix catalog structure that unlocks the growth already sitting in your account.</p><div class="cta-btns"><a href="contact.html" class="btn btn-dark">Book a Call</a><a href="results.html" class="btn btn-outline">More Case Studies</a></div></div></div>
+<footer><div class="foot-inner"><div><a href="index.html" class="foot-logo">Kyzenn</a><div class="foot-tagline">The Amazon partner that tells you the truth.</div></div><div class="foot-right"><ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="results.html">Results</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy</a></li></ul><a href="https://www.linkedin.com/company/kyzenn" target="_blank" rel="noopener" class="li-icon" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zm2-5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a></div></div><div class="foot-bar">&copy; 2025 Kyzenn. All rights reserved.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const nav=document.getElementById("nav");
+window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",scrollY>30);document.getElementById("sticky").classList.toggle("show",scrollY>400);});
+function toggleNav(){document.getElementById("navLinks").classList.toggle("open");}
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+gsap.fromTo(".kpi-main-num",{opacity:0,y:28,scale:.94},{opacity:1,y:0,scale:1,duration:.75,ease:"power3.out",scrollTrigger:{trigger:".kpi-strip",start:"top 88%",once:true}});
+gsap.fromTo(".kpi-sec-num",{opacity:0,y:20},{opacity:1,y:0,duration:.6,stagger:.1,ease:"back.out(1.4)",scrollTrigger:{trigger:".kpi-secondary",start:"top 88%",once:true}});
+gsap.fromTo(".ch-item",{opacity:0,x:-14},{opacity:1,x:0,duration:.45,stagger:.08,ease:"power2.out",scrollTrigger:{trigger:".ch-list",start:"top 82%",once:true}});
+gsap.fromTo(".sol-item",{opacity:0,y:18},{opacity:1,y:0,duration:.55,stagger:.1,ease:"power2.out",scrollTrigger:{trigger:".sol-item",start:"top 82%",once:true}});
+gsap.fromTo(".rn",{opacity:0,y:22,scale:.95},{opacity:1,y:0,scale:1,duration:.6,stagger:.12,ease:"back.out(1.5)",scrollTrigger:{trigger:".res-nums",start:"top 80%",once:true}});
+gsap.fromTo(".ba-before,.ba-after",{opacity:0,y:14},{opacity:1,y:0,duration:.5,stagger:.14,ease:"power2.out",scrollTrigger:{trigger:".ba",start:"top 82%",once:true}});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}});},{threshold:.06});
+document.querySelectorAll(".r").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kyzenn | Contact</title>
+<meta name="description" content="Get in touch with Kyzenn. Tell us about your brand and we'll give you an honest assessment." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:  #1E2235;
+  --amber: #C9956A;
+  --sage:  #6B7F6E;
+  --parch: #F2EDE4;
+  --coal:  #2C2C2E;
+  --beige: #B8A99B;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+  /* Dark form (reference) */
+  --form-page-bg: #1c1f2e;
+  --form-input-bg: #252836;
+  --form-border: rgba(255,255,255,.12);
+  --form-label: rgba(200,198,215,.72);
+  --form-placeholder: rgba(200,198,215,.35);
+  --form-btn: #c99a6d;
+  --form-btn-text: #1c1f2e;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--parch); color: var(--navy); overflow-x: hidden; }
+body.page-contact { background: var(--form-page-bg); color: var(--parch); }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--amber); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px; padding: 0 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(242,237,228,0.95); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184,169,155,0.2);
+  transition: box-shadow .3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(30,34,53,.07); }
+body.page-contact nav {
+  background: rgba(28,31,46,.88); backdrop-filter: blur(16px);
+  border-bottom-color: rgba(255,255,255,.08);
+}
+body.page-contact nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,.25); }
+.logo { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+.logo span { color: var(--amber); }
+body.page-contact .logo { color: var(--parch); }
+.nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+.nav-links a { font-size: .72rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); opacity: .6; text-decoration: none; transition: opacity .2s; }
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; color: var(--amber); }
+body.page-contact .nav-links a { color: var(--parch); opacity: .55; }
+body.page-contact .nav-links a:hover { opacity: 1; }
+body.page-contact .nav-links a.active { color: var(--form-btn); opacity: 1; }
+.nav-cta-btn { background: var(--navy); color: var(--parch) !important; padding: .52rem 1.25rem; border-radius: 2px; font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .2s; white-space: nowrap; }
+.nav-cta-btn:hover { background: var(--amber); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--navy); display: block; }
+body.page-contact .hamburger span { background: var(--parch); }
+
+/* ── BUTTONS ── */
+.btn { font-family: var(--sans); font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; padding: .8rem 1.8rem; border-radius: 2px; text-decoration: none; display: inline-block; cursor: pointer; border: none; transition: transform .2s, box-shadow .2s, background .2s, color .2s; }
+.btn-fill  { background: var(--amber); color: var(--navy); }
+.btn-fill:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,149,106,.3); }
+.btn-dark  { background: var(--navy); color: var(--parch); }
+.btn-dark:hover  { background: var(--amber); color: var(--navy); }
+
+/* ── REVEAL ── */
+.r { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.r.on { opacity: 1; transform: none; }
+.r2 { transition-delay: .1s; } .r3 { transition-delay: .2s; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 52vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 140px 6% 80px;
+  background: var(--navy); position: relative; overflow: hidden;
+}
+body.page-contact #hero { background: var(--form-page-bg); }
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 10%, rgba(201,149,106,.13) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 50% at 10% 90%, rgba(107,127,110,.07) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 35% at 90% 20%, rgba(122,143,168,.07) 0%, transparent 55%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.hero-tag { display: inline-flex; align-items: center; gap: .6rem; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.8rem; opacity: 0; animation: up .7s ease .2s forwards; }
+.hero-tag::before, .hero-tag::after { content: ''; width: 24px; height: 1px; background: var(--amber); opacity: .5; display: block; }
+h1.hero-h1 { font-family: var(--serif); font-weight: 300; line-height: 1.1; font-size: clamp(2.4rem, 5vw, 4rem); color: var(--parch); margin-bottom: 1.2rem; opacity: 0; animation: up .7s ease .4s forwards; }
+h1.hero-h1 em { font-style: italic; color: var(--amber); }
+.hero-sub { font-size: .95rem; font-weight: 300; color: var(--beige); max-width: 480px; margin: 0 auto; line-height: 1.7; opacity: 0; animation: up .7s ease .6s forwards; }
+
+/* ── MAIN CONTACT ── */
+#contact-main { background: var(--form-page-bg); padding: 90px 6%; }
+.wrap { max-width: 1080px; margin: 0 auto; }
+.contact-layout {
+  display: grid; grid-template-columns: 1fr 1.35fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start;
+}
+
+/* Left — dark panel */
+.sec-tag { font-size: .65rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--form-btn); display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; }
+.sec-tag::after { content: ''; width: 28px; height: 1px; background: var(--form-btn); opacity: .45; }
+.contact-info h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--parch); line-height: 1.2; margin-bottom: 1rem; }
+.contact-info .lead { font-size: .92rem; font-weight: 300; color: rgba(242,237,228,.62); line-height: 1.8; margin-bottom: 2.5rem; }
+
+.contact-details { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem; }
+.contact-detail { display: flex; align-items: flex-start; gap: 1rem; }
+.detail-icon {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--form-btn); flex-shrink: 0; margin-top: .1rem;
+}
+.detail-label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--form-label); margin-bottom: .2rem; }
+.detail-value { font-size: .9rem; font-weight: 300; color: var(--parch); }
+.detail-value a { color: var(--parch); text-decoration: none; transition: color .2s; }
+.detail-value a:hover { color: var(--form-btn); }
+
+.contact-divider { width: 100%; height: 1px; background: rgba(255,255,255,.1); margin: 2rem 0; }
+
+.promise-block .promise-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--form-label); margin-bottom: 1rem; }
+.promises { display: flex; flex-direction: column; gap: .7rem; }
+.promise-item { display: flex; align-items: center; gap: .75rem; font-size: .83rem; font-weight: 300; color: rgba(242,237,228,.58); }
+.promise-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--form-btn); flex-shrink: 0; }
+
+/* Right — dark form */
+.form-card { background: transparent; border: none; padding: 0; max-width: 520px; margin-left: auto; }
+.form { display: flex; flex-direction: column; gap: 1.35rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.fg { display: flex; flex-direction: column; gap: .5rem; }
+.fg label {
+  font-size: .62rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--form-label);
+}
+.fg label .req { color: rgba(201,154,109,.9); margin-left: .15em; }
+.fg input, .fg select, .fg textarea {
+  background: var(--form-input-bg); border: 1px solid var(--form-border);
+  color: var(--parch); padding: .85rem 1rem; font-family: var(--sans);
+  font-size: .9rem; font-weight: 400; border-radius: 6px; outline: none;
+  transition: border-color .2s, background .2s; appearance: none; width: 100%;
+}
+.fg select {
+  cursor: pointer;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239a96a8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+.fg select option, .fg select optgroup { background: #252836; color: var(--parch); }
+.fg input::placeholder, .fg textarea::placeholder { color: var(--form-placeholder); }
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: rgba(201,154,109,.55);
+  background: #2a2e42;
+}
+.fg textarea { min-height: 148px; resize: vertical; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-submit { margin-top: .35rem; }
+.btn-form-submit {
+  width: 100%; display: block; text-align: center;
+  font-family: var(--sans); font-size: .78rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: 1.05rem 1.5rem; border-radius: 6px; border: none; cursor: pointer;
+  background: var(--form-btn); color: var(--form-btn-text);
+  transition: transform .2s, box-shadow .2s, filter .2s;
+}
+.btn-form-submit:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 10px 28px rgba(201,154,109,.22); }
+.btn-form-submit:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; filter: none; }
+.form-note { font-size: .7rem; font-weight: 300; color: rgba(200,198,215,.4); text-align: center; margin-top: 1rem; line-height: 1.5; }
+.form-status { font-size: .82rem; font-weight: 400; margin-top: 1rem; padding: .85rem 1rem; border-radius: 6px; display: none; }
+.form-status.show { display: block; }
+.form-status.ok { background: rgba(107,127,110,.18); color: #b8d4ba; border: 1px solid rgba(107,127,110,.35); }
+.form-status.err { background: rgba(200,100,100,.12); color: #e8b4b4; border: 1px solid rgba(200,100,100,.28); }
+
+/* ── FAQ ── */
+#faq { background: var(--navy); padding: 90px 6%; }
+#faq .wrap { max-width: 780px; }
+.faq-header { margin-bottom: 3rem; }
+.faq-header .sec-tag { color: var(--amber); }
+.faq-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--parch); line-height: 1.15; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid rgba(184,169,155,.15); }
+.faq-item:last-child { border-bottom: 1px solid rgba(184,169,155,.15); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; position: relative;
+  padding: 1.4rem 0; gap: 2rem; text-align: left;
+}
+.faq-q span { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--parch); line-height: 1.3; }
+.faq-icon { width: 24px; height: 24px; border: 1px solid rgba(184,169,155,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--amber); flex-shrink: 0; transition: transform .3s, border-color .3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--amber); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s ease; }
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a p { font-size: .87rem; font-weight: 300; color: var(--beige); line-height: 1.8; padding-bottom: 1.4rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--navy); padding: 2rem 6%; border-top: 1px solid rgba(184,169,155,.12); }
+.foot-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; }
+.foot-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--parch); text-decoration: none; display: block; margin-bottom: .2rem; }
+.foot-logo span { color: var(--amber); }
+.foot-tagline { font-size: .7rem; font-weight: 300; font-style: italic; color: var(--beige); opacity: .45; }
+.foot-right { display: flex; align-items: center; gap: 1.8rem; }
+.foot-links { display: flex; gap: 1.4rem; list-style: none; }
+.foot-links a { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--beige); opacity: .5; text-decoration: none; transition: opacity .2s; }
+.foot-links a:hover { opacity: 1; }
+.li-icon { width: 34px; height: 34px; border: 1px solid rgba(184,169,155,.2); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--beige); text-decoration: none; transition: border-color .2s, color .2s; }
+.li-icon:hover { border-color: var(--amber); color: var(--amber); }
+.foot-bar { max-width: 1080px; margin: 1.3rem auto 0; padding-top: 1.3rem; border-top: 1px solid rgba(184,169,155,.07); text-align: center; font-size: .68rem; font-weight: 300; color: var(--beige); opacity: .35; }
+
+@keyframes up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+
+/* mobile */
+@media(max-width:960px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .form-card { padding: 2rem; }
+  .nav-links { display: none; }
+  .nav-cta-btn { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--parch); padding: 1.8rem 6%; gap: 1.4rem; border-bottom: 1px solid rgba(184,169,155,.2); }
+  body.page-contact .nav-links.open { background: var(--form-page-bg); border-bottom-color: rgba(255,255,255,.08); }
+  .form-row { grid-template-columns: 1fr; }
+  .foot-inner { flex-direction: column; align-items: flex-start; }
+}
+@media(max-width:600px) {
+  #contact-main, #faq { padding: 65px 5%; }
+}
+</style>
+</head>
+<body class="page-contact">
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">Kyzenn</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Get in Touch</div>
+    <h1 class="hero-h1">Let's talk about<br>your <em>brands</em></h1>
+    <p class="hero-sub">We don't pitch. We listen, assess, and tell you exactly where your brand stands — and what it would take to move it forward.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTACT -->
+<section id="contact-main">
+  <div class="wrap contact-layout">
+    <div class="contact-info r">
+      <div class="sec-tag">Reach Us</div>
+      <h2>Ready to find out what's holding your brand back?</h2>
+      <p class="lead">Most brands that reach out have tried other agencies. That's fine. We're not here to pitch you — we're here to give you a clear-eyed look at where your Amazon business stands and what it would take to grow it.</p>
+
+      <div class="contact-divider"></div>
+
+      <div class="promise-block">
+        <div class="promise-label">What you get</div>
+        <div class="promises">
+          <div class="promise-item">A straight answer — not a sales script</div>
+          <div class="promise-item">Clear view of what would move the needle</div>
+          <div class="promise-item">No obligation to work with us</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card r r2">
+      <form id="contactForm" class="form" action="https://formsubmit.co/Tariq@kyzenn.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New enquiry — Kyzenn website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="name" id="cf-combined-name" value="" />
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-row">
+          <div class="fg">
+            <label for="cf-first">First name <span class="req" aria-hidden="true">*</span></label>
+            <input id="cf-first" name="first_name" type="text" autocomplete="given-name" placeholder="Jane" required />
+          </div>
+          <div class="fg">
+            <label for="cf-last">Last name</label>
+            <input id="cf-last" name="last_name" type="text" autocomplete="family-name" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="fg">
+          <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="jane@yourbrand.com" required />
+        </div>
+        <div class="fg">
+          <label for="cf-phone">Phone</label>
+          <input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" />
+        </div>
+        <div class="fg">
+          <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" placeholder="What's your current challenge and what do you want to achieve?" required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-form-submit" id="cf-submit">Let&rsquo;s talk</button>
+        </div>
+        <p class="form-note">We&rsquo;ll reply to the address you provide. If you don&rsquo;t hear back within two business days, check your spam folder.</p>
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <a href="index.html" class="foot-logo">Kyzenn</a>
+      <div class="foot-tagline">The Amazon partner that tells you the truth.</div>
+    </div>
+    <div class="foot-right">
+      <ul class="foot-links">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+      <a href="https://www.linkedin.com/company/kyzenn" target="_blank" rel="noopener" class="li-icon" title="LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zm2-5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="foot-bar">© 2025 Kyzenn. All rights reserved.</div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30));
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+  (function () {
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('cf-submit');
+    if (!form || !statusEl || !submitBtn) return;
+
+    function showStatus(ok, text) {
+      statusEl.textContent = text;
+      statusEl.className = 'form-status show ' + (ok ? 'ok' : 'err');
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const firstEl = document.getElementById('cf-first');
+      const lastEl = document.getElementById('cf-last');
+      const combined = [firstEl && firstEl.value.trim(), lastEl && lastEl.value.trim()].filter(Boolean).join(' ');
+      document.getElementById('cf-combined-name').value = combined || (firstEl ? firstEl.value.trim() : '');
+      submitBtn.disabled = true;
+      statusEl.className = 'form-status';
+      try {
+        const fd = new FormData(form);
+        const res = await fetch('https://formsubmit.co/ajax/Tariq@kyzenn.com', {
+          method: 'POST',
+          body: fd,
+          headers: { Accept: 'application/json' }
+        });
+        const data = await res.json().catch(function () { return {}; });
+        if (res.ok && (data.success === true || data.success === 'true')) {
+          showStatus(true, 'Thanks — your message was sent. We\'ll get back to you soon.');
+          form.reset();
+        } else {
+          showStatus(false, 'Something went wrong. Please try again in a few minutes.');
+        }
+      } catch (err) {
+        showStatus(false, 'Could not send. Check your connection and try again.');
+      }
+      submitBtn.disabled = false;
+    });
+  })();
+</script>
+</body>
+</html>

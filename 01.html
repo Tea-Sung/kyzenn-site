@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kyzenn | Scaling a Natural Food Brand on Amazon</title>
+<meta name="description" content="How Kyzenn built a repeat-purchase growth engine for a natural food brand, scaling from $2.5M to $8M annually." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#1E2235;--amber:#C9956A;--sage:#6B7F6E;--parch:#F2EDE4;--beige:#B8A99B;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",sans-serif;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--parch);color:var(--navy);overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--amber);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(242,237,228,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(184,169,155,0.2);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(30,34,53,.07);}
+.logo{font-family:var(--serif);font-size:1.55rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);text-decoration:none;}
+.logo span{color:var(--amber);}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none;}
+.nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);opacity:.6;text-decoration:none;transition:opacity .2s;}
+.nav-links a:hover{opacity:1;}
+.nav-links a.active{opacity:1;color:var(--amber);}
+.nav-cta-btn{background:var(--navy);color:var(--parch) !important;padding:.52rem 1.25rem;border-radius:2px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s;white-space:nowrap;}
+.nav-cta-btn:hover{background:var(--amber);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:22px;height:1.5px;background:var(--navy);display:block;}
+
+.btn{font-family:var(--sans);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.8rem;border-radius:2px;text-decoration:none;display:inline-block;cursor:pointer;border:none;transition:all .2s;}
+.btn-fill{background:var(--amber);color:var(--navy);}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,106,.3);}
+.btn-dark{background:var(--navy);color:var(--parch);}
+.btn-dark:hover{background:var(--amber);color:var(--navy);}
+.btn-outline{background:transparent;color:var(--navy);border:1px solid rgba(30,34,53,.2);}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber);}
+
+.r{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.r.on{opacity:1;transform:none;}
+.r2{transition-delay:.08s;}.r3{transition-delay:.16s;}.r4{transition-delay:.24s;}
+
+.pw{max-width:1080px;margin:0 auto;padding:0 6%;}
+
+.breadcrumb{padding-top:92px;padding-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;}
+.breadcrumb a{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);text-decoration:none;opacity:.8;}
+.breadcrumb a:hover{opacity:1;}
+.breadcrumb-sep{font-size:.65rem;color:var(--beige);}
+.breadcrumb span{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);opacity:.38;}
+
+.case-header{padding-bottom:1.8rem;border-bottom:1px solid rgba(184,169,155,.3);}
+.case-header-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+.case-industry{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);}
+.case-topics{display:flex;gap:.4rem;flex-wrap:wrap;}
+.case-topic{font-size:.58rem;letter-spacing:.07em;color:var(--sage);background:rgba(107,127,110,.12);padding:.2rem .6rem;border-radius:20px;}
+.case-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;color:var(--navy);line-height:1.1;}
+.case-title em{font-style:italic;color:var(--amber);}
+
+.hero-img{width:100%;aspect-ratio:16/6;overflow:hidden;}
+.hero-bg{width:100%;height:100%;background:linear-gradient(135deg,#1a2a1e 0%,#2a4a2a 45%,#3a5a38 70%,#c9956a10 100%);position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-bg svg{position:absolute;inset:0;width:100%;height:100%;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(30,34,53,.5) 0%,transparent 55%);}
+
+/* THE BIG KPI STRIP - this is the key Nectar element */
+.kpi-strip{background:var(--navy);padding:3.5rem 6%;}
+.kpi-strip-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:5rem;align-items:center;}
+.kpi-main-num{font-family:var(--serif);font-size:clamp(4.5rem,9vw,7.5rem);font-weight:300;color:var(--amber);line-height:1;letter-spacing:-.01em;}
+.kpi-main-label{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--parch);opacity:.65;margin-top:.5rem;}
+.kpi-secondary{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;border-left:1px solid rgba(184,169,155,.12);padding-left:5rem;}
+.kpi-sec-num{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--amber);line-height:1;margin-bottom:.3rem;}
+.kpi-sec-label{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--parch);opacity:.5;}
+
+/* BODY */
+.case-body{padding:3rem 6%;}
+.case-body-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 256px;gap:4rem;align-items:start;}
+.case-content{}
+.intro-p{font-size:.96rem;font-weight:300;color:var(--navy);line-height:1.85;margin-bottom:.9rem;}
+.body-p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.85;margin-bottom:.9rem;}
+
+.cs-sec{margin-top:2.5rem;padding-top:2.5rem;}
+.cs-label{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;}
+.cs-label::after{content:"";flex:1;height:1px;background:rgba(201,149,106,.2);}
+
+/* Challenges - compact, like Nectar */
+.ch-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid rgba(184,169,155,.3);}
+.ch-item{background:#fff;padding:1.3rem 1.5rem;display:flex;align-items:flex-start;gap:.9rem;transition:background .25s;}
+.ch-item:hover{background:rgba(201,149,106,.04);}
+.ch-n{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--amber);opacity:.18;line-height:1;flex-shrink:0;width:26px;}
+.ch-text{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--navy);line-height:1.3;padding-top:.1rem;}
+
+/* Solutions */
+.sol-item{margin-bottom:1.8rem;}
+.sol-item:last-child{margin-bottom:0;}
+.sol-item h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--navy);margin-bottom:.5rem;display:flex;align-items:center;gap:.7rem;}
+.sol-item h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.sol-item p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.82;}
+
+/* Results */
+.res-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:1.5rem;}
+.rn{padding:2rem 1.8rem;background:var(--navy);}
+.rn:nth-child(2){background:rgba(201,149,106,.08);}
+.rn:nth-child(2) .rn-num{color:var(--navy);}
+.rn:nth-child(2) .rn-label{color:var(--navy);opacity:.55;}
+.rn-num{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--amber);line-height:1;margin-bottom:.4rem;}
+.rn-label{font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--parch);opacity:.6;}
+
+/* Before/After */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1.5rem;}
+.ba-before{background:rgba(30,34,53,.03);border:1px solid rgba(184,169,155,.3);padding:1.5rem;}
+.ba-after{background:var(--navy);padding:1.5rem;}
+.ba-head{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.9rem;}
+.ba-before .ba-head{color:var(--beige);}
+.ba-after .ba-head{color:var(--amber);opacity:.75;}
+.ba-rows{display:flex;flex-direction:column;gap:.5rem;}
+.ba-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.82rem;font-weight:300;line-height:1.5;}
+.ba-before .ba-row{color:#5e5e70;}
+.ba-after .ba-row{color:var(--beige);}
+.ba-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:.45rem;}
+.ba-before .ba-dot{background:rgba(184,169,155,.4);}
+.ba-after .ba-dot{background:var(--amber);}
+
+.takeaway{background:var(--navy);padding:1.8rem 2rem;margin-top:1.8rem;}
+.tk-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.55rem;}
+.takeaway p{font-size:.86rem;font-weight:300;color:var(--beige);line-height:1.8;}
+
+/* Sidebar */
+.sidebar{position:sticky;top:88px;}
+.sb-box{border:1px solid rgba(184,169,155,.3);background:#fff;overflow:hidden;margin-bottom:1.2rem;}
+.sb-top{background:var(--navy);padding:1.5rem 1.5rem 1.3rem;}
+.sb-kpi{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--amber);line-height:1;margin-bottom:.25rem;}
+.sb-kpi-label{font-size:.58rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--parch);opacity:.55;}
+.sb-body{padding:1.3rem 1.5rem;}
+.sb-row{margin-bottom:.85rem;}
+.sb-row:last-child{margin-bottom:0;}
+.sb-key{font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);margin-bottom:.18rem;}
+.sb-val{font-size:.81rem;font-weight:300;color:var(--navy);}
+.sb-div{height:1px;background:rgba(184,169,155,.2);margin:.9rem 0;}
+.topic-list{display:flex;flex-direction:column;gap:.35rem;}
+.topic-item{font-size:.75rem;font-weight:300;color:#5e5e70;display:flex;align-items:center;gap:.55rem;}
+.topic-item::before{content:"—";color:var(--amber);font-size:.68rem;}
+.sb-cta{background:var(--navy);padding:1.5rem;}
+.sb-cta p{font-size:.8rem;font-weight:300;color:var(--beige);line-height:1.65;margin-bottom:1rem;}
+.sb-cta .btn{width:100%;display:block;text-align:center;font-size:.7rem;padding:.72rem;}
+
+/* Related */
+.related{background:var(--navy);padding:60px 6%;}
+.related-inner{max-width:1080px;margin:0 auto;}
+.rel-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;}
+.rel-header h2{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--parch);}
+.rel-all{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-decoration:none;opacity:.8;}
+.rel-all:hover{opacity:1;}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.05);}
+.rel-card{background:rgba(255,255,255,.025);cursor:pointer;transition:background .3s;}
+.rel-card:hover{background:rgba(201,149,106,.06);}
+.rel-img{aspect-ratio:16/7;overflow:hidden;}
+.rel-body{padding:1.3rem 1.3rem 1.5rem;border-top:1px solid rgba(184,169,155,.08);}
+.rel-lever{font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--beige);opacity:.5;margin-bottom:.55rem;}
+.rel-kpi{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--amber);line-height:1;margin-bottom:.3rem;}
+.rel-title{font-family:var(--serif);font-size:.9rem;font-weight:400;color:var(--parch);line-height:1.35;}
+
+/* CTA */
+.cta-sec{background:var(--parch);padding:70px 6%;text-align:center;}
+.cta-inner{max-width:520px;margin:0 auto;}
+.cta-tag{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.9rem;}
+.cta-tag::before,.cta-tag::after{content:"";width:22px;height:1px;background:var(--amber);opacity:.45;}
+.cta-h{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;color:var(--navy);line-height:1.15;margin-bottom:.8rem;}
+.cta-h em{font-style:italic;color:var(--amber);}
+.cta-p{font-size:.87rem;font-weight:300;color:#5e5e70;line-height:1.7;margin-bottom:1.8rem;}
+.cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;}
+
+footer{background:var(--navy);padding:2rem 6%;border-top:1px solid rgba(184,169,155,.12);}
+.foot-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;}
+.foot-logo{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--parch);text-decoration:none;display:block;margin-bottom:.2rem;}
+.foot-logo span{color:var(--amber);}
+.foot-tagline{font-size:.7rem;font-weight:300;font-style:italic;color:var(--beige);opacity:.45;}
+.foot-right{display:flex;align-items:center;gap:1.8rem;}
+.foot-links{display:flex;gap:1.4rem;list-style:none;}
+.foot-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--beige);opacity:.5;text-decoration:none;transition:opacity .2s;}
+.foot-links a:hover{opacity:1;}
+.li-icon{width:34px;height:34px;border:1px solid rgba(184,169,155,.2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--beige);text-decoration:none;transition:border-color .2s,color .2s;}
+.li-icon:hover{border-color:var(--amber);color:var(--amber);}
+.foot-bar{max-width:1080px;margin:1.3rem auto 0;padding-top:1.3rem;border-top:1px solid rgba(184,169,155,.07);text-align:center;font-size:.68rem;font-weight:300;color:var(--beige);opacity:.35;}
+
+.sticky{position:fixed;bottom:1.8rem;right:1.8rem;z-index:90;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none;}
+.sticky.show{opacity:1;transform:none;pointer-events:all;}
+
+@media(max-width:960px){
+  .kpi-strip-inner{grid-template-columns:1fr;gap:2rem;}
+  .kpi-secondary{border-left:none;padding-left:0;border-top:1px solid rgba(184,169,155,.12);padding-top:2rem;grid-template-columns:repeat(3,1fr);}
+  .case-body-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .sidebar{position:static;}
+  .ch-list{grid-template-columns:1fr;}
+  .res-nums{grid-template-columns:1fr;}
+  .ba{grid-template-columns:1fr;}
+  .rel-grid{grid-template-columns:1fr;}
+  .rel-header{flex-direction:column;gap:.8rem;}
+  .nav-links{display:none;}
+  .nav-cta-btn{display:none;}
+  .hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--parch);padding:1.8rem 6%;gap:1.4rem;border-bottom:1px solid rgba(184,169,155,.2);}
+  .foot-inner{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:600px){
+  .kpi-secondary{grid-template-columns:1fr;}
+  .case-body{padding:2.5rem 5%;}
+  .cta-sec,.related{padding:50px 5%;}
+  .pw{padding:0 5%;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">Kyzenn</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="results.html" class="active">Results</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="pw">
+  <div class="breadcrumb r">
+    <a href="results.html">Case Studies</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>Scaling a Natural Food Brand</span>
+  </div>
+  <div class="case-header r r2">
+    <div class="case-header-meta">
+      <span class="case-industry">Natural Food &middot; Consumable / Dry Goods</span>
+      <div class="case-topics">
+        <span class="case-topic">Subscribe &amp; Save</span>
+        <span class="case-topic">PPC Restructure</span>
+        <span class="case-topic">Retention Strategy</span>
+        <span class="case-topic">Demand Capture</span>
+        <span class="case-topic">Paid Media</span>
+      </div>
+    </div>
+    <h1 class="case-title">Scaling a Natural Food Brand on Amazon &mdash;<br><em>Building a Repeat-Purchase Growth Engine</em></h1>
+  </div>
+</div>
+
+<div class="hero-img r r3">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wfh" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6B4A28"/><stop offset="100%" stop-color="#3E2810"/></linearGradient>
+        <linearGradient id="afh" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C9956A"/><stop offset="100%" stop-color="#8A5C30"/></linearGradient>
+        <linearGradient id="bwlh" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3A2E1A"/><stop offset="100%" stop-color="#1E1608"/></linearGradient>
+        <linearGradient id="fadeh" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14110C" stop-opacity="0"/><stop offset="100%" stop-color="#0E0C08" stop-opacity="0.7"/></linearGradient>
+        <radialGradient id="glowh" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C9956A" stop-opacity="0.1"/><stop offset="100%" stop-color="#C9956A" stop-opacity="0"/></radialGradient>
+      </defs>
+      <ellipse cx="600" cy="200" rx="480" ry="200" fill="url(#glowh)"/>
+      <circle cx="960" cy="90" r="260" fill="none" stroke="rgba(201,149,106,0.07)" stroke-width="1"/>
+      <circle cx="960" cy="90" r="170" fill="none" stroke="rgba(201,149,106,0.05)" stroke-width="1"/>
+      <circle cx="200" cy="310" r="210" fill="none" stroke="rgba(107,127,110,0.06)" stroke-width="1"/>
+      <ellipse cx="600" cy="326" rx="155" ry="14" fill="#0A0804" opacity="0.55"/>
+      <path d="M 450 244 Q 437 315 600 328 Q 763 315 750 244 Z" fill="url(#bwlh)"/>
+      <ellipse cx="600" cy="244" rx="152" ry="21" fill="#2E2210"/>
+      <ellipse cx="600" cy="244" rx="152" ry="21" fill="none" stroke="#5A3E1E" stroke-width="1"/>
+      <path d="M 452 237 Q 600 218 748 237" fill="none" stroke="rgba(201,149,106,0.22)" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="600" cy="245" rx="140" ry="16" fill="#1A1208" opacity="0.7"/>
+      <path d="M 456 252 Q 600 268 744 252" fill="none" stroke="#3A2A12" stroke-width="0.8" opacity="0.45"/>
+      <g transform="translate(538,224) rotate(-12)"><ellipse cx="0" cy="0" rx="24" ry="19" fill="url(#wfh)"/><path d="M -12 0 Q 0 -7 12 0 Q 0 7 -12 0 Z" fill="#2A1808" opacity="0.4"/><path d="M 0 -19 Q 7 -9 0 0 Q -7 -9 0 -19 Z" fill="#2A1808" opacity="0.3"/><path d="M 0 19 Q 7 9 0 0 Q -7 9 0 19 Z" fill="#2A1808" opacity="0.3"/></g>
+      <g transform="translate(646,222) rotate(18)"><ellipse cx="0" cy="0" rx="22" ry="17" fill="#5A3E1C"/><path d="M -11 0 Q 0 -6 11 0 Q 0 6 -11 0 Z" fill="#2A1808" opacity="0.4"/></g>
+      <g transform="translate(590,234) rotate(32)"><ellipse cx="0" cy="0" rx="9" ry="18" fill="url(#afh)"/><path d="M -5 -12 Q 0 -18 5 -12" fill="none" stroke="#A87048" stroke-width="0.7" opacity="0.6"/></g>
+      <g transform="translate(614,226) rotate(-48)"><ellipse cx="0" cy="0" rx="8" ry="16" fill="#B87840"/></g>
+      <g transform="translate(558,234) rotate(-28)"><path d="M -15 -4 Q -7 -15 7 -12 Q 18 -8 17 2 Q 15 12 3 14 Q -9 15 -15 7 Q -20 0 -15 -4 Z" fill="#D4A96A"/></g>
+      <g transform="translate(352,256) rotate(-50)"><ellipse cx="0" cy="0" rx="8" ry="16" fill="#C98848" opacity="0.8"/></g>
+      <g transform="translate(412,222) rotate(10)"><ellipse cx="0" cy="0" rx="18" ry="14" fill="#5E3E1A" opacity="0.85"/><path d="M -9 0 Q 0 -5 9 0 Q 0 5 -9 0 Z" fill="#2A1808" opacity="0.45"/></g>
+      <g transform="translate(792,178) rotate(-6)"><ellipse cx="0" cy="0" rx="20" ry="16" fill="url(#wfh)" opacity="0.9"/><path d="M -10 0 Q 0 -6 10 0 Q 0 6 -10 0 Z" fill="#2A1808" opacity="0.4"/></g>
+      <g transform="translate(852,228) rotate(28)"><ellipse cx="0" cy="0" rx="8" ry="14" fill="#6A421C" opacity="0.85"/></g>
+      <circle cx="470" cy="288" r="3" fill="#C9956A" opacity="0.38"/>
+      <circle cx="732" cy="275" r="2.5" fill="#C9956A" opacity="0.35"/>
+      <circle cx="390" cy="242" r="2" fill="#8A5A28" opacity="0.38"/>
+      <circle cx="884" cy="252" r="2" fill="#C9956A" opacity="0.36"/>
+      <rect x="0" y="244" width="1200" height="116" fill="url(#fadeh)"/>
+      <line x1="0" y1="1" x2="1200" y2="1" stroke="#C9956A" stroke-width="2" opacity="0.28"/>
+    </svg>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,42,30,.6) 0%,transparent 55%);"></div>
+  </div>
+</div>
+
+<!-- BIG KPI STRIP -->
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="case-body">
+  <div class="case-body-inner">
+
+    <div class="case-content">
+            <div class="cs-sec r" style="border-top:none;padding-top:0;margin-bottom:0;">
+        <div class="cs-label">Background</div>
+        <p class="intro-p r">A growing natural food brand had built strong organic traction on Amazon &mdash; but growth had hit a ceiling. Revenue was steady, paid media was inconsistent, and there was no defined strategy to grow Subscribe &amp; Save.</p>
+            <p class="body-p r r2">With ~7,200 active Subscribe &amp; Save customers and a TACoS that felt fragile to scale, the brand needed a system &mdash; not just ad management. The challenge was to grow revenue while simultaneously building the repeat-purchase behaviour that makes consumable brands durable.</p>
+</div>
+      <div class="cs-sec r">
+        <div class="cs-label">Challenges</div>
+        <div class="ch-list">
+          <div class="ch-item"><div class="ch-n">1</div><div class="ch-text">Revenue relied heavily on organic traffic</div></div>
+          <div class="ch-item"><div class="ch-n">2</div><div class="ch-text">Paid media inconsistent and under-leveraged</div></div>
+          <div class="ch-item"><div class="ch-n">3</div><div class="ch-text">No defined Subscribe &amp; Save strategy</div></div>
+          <div class="ch-item"><div class="ch-n">4</div><div class="ch-text">Scaling ad spend felt risky without structure</div></div>
+        </div>
+      </div>
+
+      <div class="cs-sec r r2">
+        <div class="cs-label">Solutions</div>
+        <p class="body-p" style="margin-bottom:1.5rem;">We implemented a structured Amazon growth framework focused on both acquisition and retention &mdash; three interlocking systems designed to compound over time.</p>
+        <div class="sol-item">
+          <h3>Subscribe &amp; Save Growth Strategy</h3>
+          <p>Paid traffic aligned to repeat-purchase SKUs &mdash; shifting targeting away from one-off conversion toward customers most likely to subscribe. Campaigns restructured to support subscription behaviour at every funnel stage, with acquisition filtered for quality over volume.</p>
+        </div>
+        <div class="sol-item">
+          <h3>Paid Media Restructure</h3>
+          <p>Campaign architecture rebuilt from the ground up for clarity and control. Budget reallocated toward top-converting segments, eliminating spend generating traffic without retention value. Scaling tied directly to performance benchmarks &mdash; spend only increased when efficiency justified it.</p>
+        </div>
+        <div class="sol-item">
+          <h3>Predictable Growth Framework</h3>
+          <p>Every acquisition decision linked to long-term customer value &mdash; not just immediate ROAS. Spend scaled responsibly with TACoS protected throughout expansion. The result: a system where growth compounds instead of requiring constant intervention to maintain efficiency.</p>
+        </div>
+      </div>
+
+      <div class="cs-sec r">
+        <div class="cs-label">Results</div>
+        <div class="res-nums">
+          <div class="rn">
+            <div class="rn-num">$2.5M &rarr; $8M</div>
+            <div class="rn-label">Annual Revenue &middot; 10 Months</div>
+          </div>
+          <div class="rn">
+            <div class="rn-num">7,200 &rarr; 15,000</div>
+            <div class="rn-label">Subscribe &amp; Save Customers</div>
+          </div>
+        </div>
+        <p class="body-p">Revenue scaled from $2.5M to $8M annually in 10 months. Ad-driven revenue grew from minimal to $1M+ annually. TACoS held at 11&ndash;12% throughout. The brand now runs at $170K/week &mdash; an $8M+ annual pace.</p>
+        <div class="ba">
+          <div class="ba-before">
+            <div class="ba-head">Before</div>
+            <div class="ba-rows">
+              <div class="ba-row"><span class="ba-dot"></span>~$2.5M annual revenue</div>
+              <div class="ba-row"><span class="ba-dot"></span>~7,200 active subscribers</div>
+              <div class="ba-row"><span class="ba-dot"></span>Inconsistent, under-leveraged paid media</div>
+              <div class="ba-row"><span class="ba-dot"></span>No Subscribe &amp; Save growth strategy</div>
+              <div class="ba-row"><span class="ba-dot"></span>Growth reliant on organic alone</div>
+            </div>
+          </div>
+          <div class="ba-after">
+            <div class="ba-head">After</div>
+            <div class="ba-rows">
+              <div class="ba-row"><span class="ba-dot"></span>$8M annual revenue (+220%)</div>
+              <div class="ba-row"><span class="ba-dot"></span>15,000 active subscribers (+108%)</div>
+              <div class="ba-row"><span class="ba-dot"></span>$1M+ ad-driven revenue annually</div>
+              <div class="ba-row"><span class="ba-dot"></span>11&ndash;12% TACoS maintained throughout</div>
+              <div class="ba-row"><span class="ba-dot"></span>$170K/week run-rate</div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">
+          <div class="tk-label">Key Takeaway</div>
+          <p>For consumable brands, paid media only compounds when built to support retention &mdash; not just acquisition. Rebuilding campaign architecture around repeat-purchase SKUs turned inconsistent spend into a structured growth engine. The result: predictable, recurring revenue that scales without sacrificing efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sb-box r r2">
+        <div class="sb-top">
+          <div class="sb-kpi">$2.5M &rarr; $8M</div>
+          <div class="sb-kpi-label">Annual Revenue Growth</div>
+        </div>
+        <div class="sb-body">
+          <div class="sb-row"><div class="sb-key">Category</div><div class="sb-val">Natural Food &middot; Dry Goods</div></div>
+          <div class="sb-row"><div class="sb-key">Engagement Start</div><div class="sb-val">April 2025</div></div>
+          <div class="sb-row"><div class="sb-key">Subscribers</div><div class="sb-val">7,200 &rarr; 15,000</div></div>
+          <div class="sb-row"><div class="sb-key">TACoS</div><div class="sb-val">11&ndash;12% maintained</div></div>
+          <div class="sb-row"><div class="sb-key">Run-Rate</div><div class="sb-val">$170K/wk ($8M+ annual)</div></div>
+          <div class="sb-div"></div>
+          <div class="sb-row">
+            <div class="sb-key">Topics</div>
+            <div class="topic-list">
+              <span class="topic-item">Subscribe &amp; Save</span>
+              <span class="topic-item">PPC Restructure</span>
+              <span class="topic-item">Retention Strategy</span>
+              <span class="topic-item">Demand Capture</span>
+              <span class="topic-item">Paid Media</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<div class="cta-sec">
+  <div class="cta-inner r">
+    <div class="cta-tag">Work With Us</div>
+    <h2 class="cta-h">Ready to build<br><em>recurring revenue?</em></h2>
+    <p class="cta-p">We work with consumable brands who want growth systems &mdash; not just ad management.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-dark">Book a Call</a>
+      <a href="results.html" class="btn btn-outline">More Case Studies</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div><a href="index.html" class="foot-logo">Kyzenn</a><div class="foot-tagline">The Amazon partner that tells you the truth.</div></div>
+    <div class="foot-right">
+      <ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="results.html">Results</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy</a></li></ul>
+      <a href="https://www.linkedin.com/company/kyzenn" target="_blank" rel="noopener" class="li-icon" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zm2-5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+    </div>
+  </div>
+  <div class="foot-bar">&copy; 2025 Kyzenn. All rights reserved.</div>
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const nav=document.getElementById("nav");
+window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",scrollY>30);document.getElementById("sticky").classList.toggle("show",scrollY>400);});
+function toggleNav(){document.getElementById("navLinks").classList.toggle("open");}
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+gsap.fromTo(".kpi-main-num,kpi-main-label",{opacity:0,y:28,scale:.94},{opacity:1,y:0,scale:1,duration:.75,ease:"power3.out",scrollTrigger:{trigger:".kpi-strip",start:"top 88%",once:true}});
+gsap.fromTo(".kpi-sec-num",{opacity:0,y:20},{opacity:1,y:0,duration:.6,stagger:.1,ease:"back.out(1.4)",scrollTrigger:{trigger:".kpi-secondary",start:"top 88%",once:true}});
+gsap.fromTo(".ch-item",{opacity:0,x:-14},{opacity:1,x:0,duration:.45,stagger:.08,ease:"power2.out",scrollTrigger:{trigger:".ch-list",start:"top 82%",once:true}});
+gsap.fromTo(".sol-item",{opacity:0,y:18},{opacity:1,y:0,duration:.55,stagger:.1,ease:"power2.out",scrollTrigger:{trigger:".sol-item",start:"top 82%",once:true}});
+gsap.fromTo(".rn",{opacity:0,y:22,scale:.95},{opacity:1,y:0,scale:1,duration:.6,stagger:.12,ease:"back.out(1.5)",scrollTrigger:{trigger:".res-nums",start:"top 80%",once:true}});
+gsap.fromTo(".ba-before,.ba-after",{opacity:0,y:14},{opacity:1,y:0,duration:.5,stagger:.14,ease:"power2.out",scrollTrigger:{trigger:".ba",start:"top 82%",once:true}});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}});},{threshold:.06});
+document.querySelectorAll(".r").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
